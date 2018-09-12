@@ -39,7 +39,7 @@ STATICFILES_DIRS = (
     # ("css", os.path.join(STATIC_ROOT,'css')),
     # ("images", os.path.join(STATIC_ROOT,'images')),
     # ("fonts", os.path.join(STATIC_ROOT,'fonts')),
-    ("rest_framework", os.path.join(STATIC_ROOT,'rest_framework'))
+    # ("rest_framework", os.path.join(STATIC_ROOT,'rest_framework'))
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
