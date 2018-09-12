@@ -42,7 +42,7 @@ STATICFILES_DIRS = (
     # ("css", os.path.join(STATIC_ROOT,'css')),
     # ("images", os.path.join(STATIC_ROOT,'images')),
     # ("fonts", os.path.join(STATIC_ROOT,'fonts')),
-    ("rest_framework", os.path.join(STATIC_ROOT,'rest_framework'))
+    # ("rest_framework", os.path.join(STATIC_ROOT,'rest_framework'))
 )
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
@@ -98,19 +98,19 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'firstapp',
-#         'USER': 'postgres',
-#         'PASSWORD': '',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
-DATABASES = {}
-DATABASES['default'] =  dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'firstapp',
+        'USER': 'postgres',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+# DATABASES = {}
+# DATABASES['default'] =  dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+# DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
