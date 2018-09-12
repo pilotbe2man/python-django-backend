@@ -38,10 +38,10 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = 'static'
 
 STATICFILES_DIRS = (
-    ("js", os.path.join(STATIC_ROOT,'js')),
-    ("css", os.path.join(STATIC_ROOT,'css')),
-    ("images", os.path.join(STATIC_ROOT,'images')),
-    ("fonts", os.path.join(STATIC_ROOT,'fonts')),
+    # ("js", os.path.join(STATIC_ROOT,'js')),
+    # ("css", os.path.join(STATIC_ROOT,'css')),
+    # ("images", os.path.join(STATIC_ROOT,'images')),
+    # ("fonts", os.path.join(STATIC_ROOT,'fonts')),
     ("rest_framework", os.path.join(STATIC_ROOT,'rest_framework'))
 )
 
