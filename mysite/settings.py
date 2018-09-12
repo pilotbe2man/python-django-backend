@@ -29,8 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'python-model.herokuapp.com',
-    'localhost',
-    '127.0.0.1'
+    'localhost'
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
