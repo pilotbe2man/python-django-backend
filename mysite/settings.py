@@ -35,7 +35,7 @@ ALLOWED_HOSTS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/admin/'
+STATIC_URL = '/static/'
 # STATIC_ROOT = 'static'
 
 STATICFILES_DIRS = [
