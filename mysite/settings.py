@@ -28,11 +28,13 @@ SECRET_KEY = 'o#p(zpl+%yfk-t8@_^5d)!pf_6n=ip_ap+4de4e7zvqd^^u)*h'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'python-model.herokuapp.com'
+    'python-model.herokuapp.com',
+    'localhost'
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+# STATIC_ROOT = 'static'
 
 STATICFILES_DIRS = (
     ("js", os.path.join(STATIC_ROOT,'js')),
@@ -42,7 +44,7 @@ STATICFILES_DIRS = (
     ("rest_framework", os.path.join(STATIC_ROOT,'rest_framework'))
 )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
 # Application definition
@@ -53,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # 'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_swagger',
@@ -67,7 +70,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    # 'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -95,14 +98,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 # DATABASES = {
-#     # 'default': {
-#     #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#     #     'NAME': 'firstapp',
-#     #     'USER': 'postgres',
-#     #     'PASSWORD': '',
-#     #     'HOST': 'localhost',
-#     #     'PORT': '',
-#     # }
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'firstapp',
+#         'USER': 'postgres',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
 # }
 DATABASES = {}
 DATABASES['default'] =  dj_database_url.config(default=os.environ.get('DATABASE_URL'))
