@@ -34,8 +34,8 @@ ALLOWED_HOSTS = [
     'localhost'
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
-STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/admin/'
 # STATIC_ROOT = 'static'
 
 STATICFILES_DIRS = [
