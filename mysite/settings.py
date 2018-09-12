@@ -32,11 +32,12 @@ ALLOWED_HOSTS = [
     'localhost'
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 STATIC_URL = '/static/'
 # STATIC_ROOT = 'static'
 
 STATICFILES_DIRS = (
+    os.path.join(PROJECT_DIR, 'static'),
     # ("js", os.path.join(STATIC_ROOT,'js')),
     # ("css", os.path.join(STATIC_ROOT,'css')),
     # ("images", os.path.join(STATIC_ROOT,'images')),
