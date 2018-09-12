@@ -27,17 +27,17 @@ SECRET_KEY = 'o#p(zpl+%yfk-t8@_^5d)!pf_6n=ip_ap+4de4e7zvqd^^u)*h'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    
+    'python-model.herokuapp.com'
 ]
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
 STATICFILES_DIRS = (
-    ("js", os.path.join(STATIC_ROOT,'js')),
-    ("css", os.path.join(STATIC_ROOT,'css')),
-    ("images", os.path.join(STATIC_ROOT,'images')),
-    ("fonts", os.path.join(STATIC_ROOT,'fonts')),
+    # ("js", os.path.join(STATIC_ROOT,'js')),
+    # ("css", os.path.join(STATIC_ROOT,'css')),
+    # ("images", os.path.join(STATIC_ROOT,'images')),
+    # ("fonts", os.path.join(STATIC_ROOT,'fonts')),
     ("rest_framework", os.path.join(STATIC_ROOT,'rest_framework'))
 )
 
@@ -94,16 +94,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'firstapp',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'firstapp',
+    #     'USER': 'postgres',
+    #     'PASSWORD': '',
+    #     'HOST': 'localhost',
+    #     'PORT': '',
+    # }
 }
 
 
